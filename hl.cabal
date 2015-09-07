@@ -53,17 +53,11 @@ executable hl
     HL.Controller.Irc
     HL.Controller.MailingLists
     HL.Controller.Markdown
-    HL.Controller.News
-    HL.Controller.Report
-    HL.Controller.Wiki
     HL.Development
     HL.Dispatch
     HL.Foundation
     HL.Model.Markdown
-    HL.Model.News
-    HL.Model.Report
     HL.Model.Videos
-    HL.Model.Wiki
     HL.Static
     HL.Types
     HL.View
@@ -75,10 +69,7 @@ executable hl
     HL.View.Home
     HL.View.Home.Features
     HL.View.Markdown
-    HL.View.News
-    HL.View.Report
     HL.View.Template
-    HL.View.Wiki
     Paths_hl
     Yesod.Caching
     Yesod.Lucid

@@ -1,3 +1,4 @@
+{-# LANGUAGE ExtendedDefaultRules #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
 
@@ -116,7 +117,7 @@ navigation showBrand crumbs mroute url =
   where items =
           div_ [class_ "collapse navbar-collapse"]
                (ul_ [class_ "nav navbar-nav"]
-                    (mapM_ item [DownloadsR,CommunityR,DocumentationR,NewsR]))
+                    (mapM_ item [DownloadsR,CommunityR,DocumentationR]))
           where item :: Route App -> Html ()
                 item route =
                   li_ [class_ "active" | Just route == mroute || elem route crumbs]
@@ -149,39 +150,15 @@ background url route =
 
 -- | Footer across the whole site.
 footer :: (Route App -> Text) -> Maybe (Route App) -> Html ()
-footer url r =
+footer _url _ =
   div_ [class_ "footer"]
        (div_ [class_ "container"]
-             (p_ (case r of
-                    Just (WikiR page) ->
-                      wikiLicense (Just page)
-                    Just (WikiHomeR{}) ->
-                      wikiLicense (Nothing :: Maybe Text)
-                    _ -> hlCopy)))
-  where hlCopy =
-          do span_ [class_ "item"] "\169 2014\8211\&2015 haskell.org"
+             (p_ hlCopy))
+  where hlCopy :: Html ()
+        hlCopy =
+          do span_ [class_ "item"]
+                   "\169 2014\8211\&2015 haskell.org"
              span_ [class_ "item footer-contribute"]
                    (do "Got changes to contribute? "
-                       a_ [href_ "https://github.com/haskell-infra/hl"] "Fork or comment on Github")
-             span_ [class_ "pull-right"]
-                   (do span_ "Proudly hosted by "
-                       a_ [href_ "https://www.rackspace.com/"]
-                          (img_ [src_ (url (StaticR img_rackspace_svg))
-                                ,alt_ "rackspace"
-                                ,height_ "20"
-                                ,width_ "20"]))
-        wikiLicense :: Maybe Text -> Html ()
-        wikiLicense page =
-          do span_ [class_ "item"] wikiLink
-             span_ [class_ "item"]
-                   (do "Wiki content is available under "
-                       a_ [href_ "http://www.haskell.org/haskellwiki/HaskellWiki:Copyrights"]
-                          "a simple permissive license.")
-          where wikiLink =
-                  case page of
-                    Nothing ->
-                      a_ [href_ "http://www.haskell.org/haskellwiki/"] "Go to haskell.org wiki"
-                    Just pn ->
-                      a_ [href_ ("http://www.haskell.org/haskellwiki/index.php?title=" <>
-                                 pn <> "&action=edit")]
-                         "Edit this page"
+                       a_ [href_ "https://github.com/commercialhaskell/commercialhaskell.com"]
+                          "Fork or comment on Github")

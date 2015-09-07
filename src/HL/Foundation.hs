@@ -21,12 +21,9 @@ module HL.Foundation
   where
 
 import Control.Concurrent.MVar.Lifted
+import Data.Monoid
 import HL.Static
 import HL.Types
-
-import Data.Monoid
-import Data.Text (Text)
-import Data.Text (pack)
 import Network.Wai.Logger
 import System.Log.FastLogger
 import Yesod
@@ -58,18 +55,10 @@ instance Human (Route App) where
       IrcR                 -> "IRC"
       DocumentationR       -> "Documentation"
       HomeR                -> "Home"
-      DonateR              -> "Donate"
       MailingListsR        -> "Mailing Lists"
-      NewsR                -> "News"
       StaticR{}            -> "Static"
       DownloadsR           -> "Downloads"
       DownloadsForR os     -> "Downloads for " <> toHuman os
-      WikiR t              -> "Wiki: " <> t
-      ReportNodeR _ _      -> "Report Page"
-      ReportModeR Node i   -> "Node " <> pack (show i)
-      ReportModeR Mono i   -> "Mono " <> pack (show i)
-      ReportR{}            -> "Report"
-      WikiHomeR{}          -> "Wiki"
 
 instance Slug (Route App) where
   toSlug r =
@@ -78,14 +67,7 @@ instance Slug (Route App) where
       IrcR              -> "irc"
       DocumentationR    -> "documentation"
       HomeR             -> "home"
-      DonateR           -> "donate"
       MailingListsR     -> "mailing-lists"
-      NewsR             -> "news"
       StaticR{}         -> "static"
       DownloadsR        -> "downloads"
-      WikiR{}           -> "wiki"
-      ReportNodeR{}     -> "report"
-      ReportModeR{}     -> "report"
-      ReportR{}         -> "report"
-      WikiHomeR{}       -> "wiki"
       DownloadsForR{}   -> "downloads"

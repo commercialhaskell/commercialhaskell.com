@@ -13,7 +13,7 @@ import HL.View.Template
 homeV :: [(Text, Text, Text)] -> FromLucid App
 homeV vids =
   skeleton
-    "Haskell Language"
+    "Commercial Haskell"
     (\_ _ ->
        linkcss "https://fonts.googleapis.com/css?family=Ubuntu:700")
     (\cur url ->
@@ -23,7 +23,6 @@ homeV vids =
           community url vids
           features
           sponsors
-          transition
           events
           div_ [class_ "mobile"] $
                (navigation False [] cur url))
@@ -49,9 +48,9 @@ header url =
   where branding =
           span_ [class_ "name",background url img_logo_png] "Haskell"
         summation =
-          span_ [class_ "summary"] "An advanced purely-functional programming language"
+          span_ [class_ "summary"] "Commercial quality resources for using and learning Haskell"
         tag =
-          span_ [class_ "tag"] "Declarative, statically typed code."
+          span_ [class_ "tag"] "Everything you need."
         sample =
           div_ [class_ "code-sample",title_ "This example is contrived in order to demonstrate what Haskell looks like, including: (1) where syntax, (2) enumeration syntax, (3) pattern matching, (4) consing as an operator, (5) list comprehensions, (6) infix functions. Don't take it seriously as an efficient prime number generator."]
                (haskellPre codeSample)
@@ -91,31 +90,14 @@ community url vids =
                 (do container_
                       [id_ "tagline"]
                       (row_ (span8_ [class_ "col-md-8"]
-                                    (do h1_ "An open source community effort for over 20 years"
+                                    (do h1_ "An initiative by the Commercial Haskell Group"
                                         p_ [class_ "learn-more"]
                                            (a_ [href_ (url CommunityR)] "Learn more"))))
                     container_
                       [id_ "video-description"]
                       (row_ (span8_ [class_ "col-md-8"]
                                     (do h1_ (a_ [id_ "video-anchor"] "<title here>")
-                                        p_ (a_ [id_ "video-view"] "View the video now \8594")))))
-           div_ [class_ "videos"]
-                (container_ (row_ (span12_ [class_ "col-md-12"]
-                                           (ul_ (forM_ vids vid))))))
-  where vid :: (Text,Text,Text) -> Html ()
-        vid (n,u,thumb) =
-          li_ (a_ [class_ "vid-thumbnail",href_ u,title_ n]
-                  (img_ [src_ thumb]))
-
--- | Information for people to help transition from the old site to the new locations.
-transition :: Html ()
-transition =
-  div_ [class_ "transition"]
-       (container_
-          (row_ (span6_ [class_ "col-md-6"]
-                        (do h1_ "Psst! Looking for the wiki?"
-                            p_ (do "This is the new Haskell home page! The wiki has moved to "
-                                   a_ [href_ "https://wiki.haskell.org"] "wiki.haskell.org.")))))
+                                        p_ (a_ [id_ "video-view"] "View the video now \8594"))))))
 
 -- | Events section.
 -- TODO: Take events section from Haskell News?
@@ -130,10 +112,8 @@ sponsors =
     container_ $
       do row_ (span6_ [class_ "col-md-6"] (h1_ "Sponsors"))
          row_ (do span6_ [class_ "col-md-6"]
-                         (p_ (do strong_ (a_ [href_ "https://www.datadoghq.com"] "DataDog")
-                                 " provides powerful, customizable 24/7 metrics and monitoring \
-                                 \integration for all of Haskell.org, and complains loudly for \
-                                 \us when things go wrong."))
+                         (p_ (do strong_ (a_ [href_ "https://www.fpcomplete.com"] "FP Complete")
+                                 " provides a number of tools and services etc."))
                   span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://www.fastly.com"] "Fastly")
                                  "'s Next Generation CDN provides low latency access for all of \

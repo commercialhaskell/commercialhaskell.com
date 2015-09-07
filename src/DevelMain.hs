@@ -30,9 +30,9 @@ main =
      tid <- forkIO
               (runSettings
                  (setPort port defaultSettings)
-                 (\req ->
+                 (\req f ->
                     do handler <- readIORef ref
-                       handler req))
+                       handler req f))
      _ <- newStore tid
      ref' <- newStore ref
      _ <- newStore cacheVar
