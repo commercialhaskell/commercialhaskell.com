@@ -40,14 +40,26 @@ Clone the repo:
 
 Set up sandbox:
 
-    $ cabal sandbox init
-
-Install dependencies and build:
-
-    $ cabal install --only-dependencies
-    $ cabal build
+    $ stack build
 
 Done!
+
+---
+
+OS X with homebrew:
+
+    $ brew install icu4c
+
+Add the following to your `~/.stack/stack.yaml`:
+
+    extra-include-dirs:
+    - /usr/local/opt/icu4c/include
+    extra-lib-dirs:
+    - /usr/local/opt/icu4c/lib
+
+Now:
+
+    $ stack build
 
 ## Running
 
