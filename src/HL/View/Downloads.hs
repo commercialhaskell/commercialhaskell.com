@@ -18,12 +18,17 @@ downloadsV =
          (row_
             (span12_ [class_ "col-md-12"]
                (do h1_ "Downloads"
-                   h2_ "Compiler and base libraries"
+                   h2_ "The Stack tool"
+                   p_ "The stack commandline tool provides all the functionality necessary to download and setup the GHC Haskell compiler, building and developing packages."
                    p_ "Downloads are available on a per operating system basis:"
-                   ul_ (forM_ [minBound .. maxBound]
-                              (\os ->
-                                 li_ (a_ [href_ (url (DownloadsForR os))]
-                                         (toHtml (toHuman os)))))
+                   ul_ (do li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#windows"] "Windows")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#os-x"] "OS X")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#ubuntu"] "Ubuntu")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#debian"] "Debian")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#centos--red-hat--amazon-linux"] "CentOS / Red Hat / Amazon Linux")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#fedora"] "Fedora")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#arch-linux"] "Arch Linux")
+                           li_ (a_ [href_ "https://github.com/commercialhaskell/stack/wiki/Downloads#linux"] "Linux (general)"))
                    thirdParty))))
 
 -- | OS-specific downloads view.
