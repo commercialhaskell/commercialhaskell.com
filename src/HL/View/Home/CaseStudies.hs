@@ -15,7 +15,7 @@ caseStudies =
   div_ [class_ "case-studies"]
        (container_
           (do h1_ "Case studies"
-              p_ "Below are case Studies of companies with hands-on experience with Haskell."
+              p_ "Below are case studies of companies with hands-on experience with Haskell."
               row_ (do span6_ [class_ "col-md-6"]
                               (do h2_ "Sqream Technologies"
                                   p_ "Using Haskell at Sqream Technologies. At SQream, they use Haskell for a large part of their code. They use Haskell for the compiler, which takes SQL statements and turns them into low level instructions for the high performance CUDA runtime. They also use Haskell for rapid prototyping and for many auxiliary utilities."
