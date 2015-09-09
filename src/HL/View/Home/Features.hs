@@ -11,8 +11,20 @@ import Data.Monoid
 
 -- | Features section explains what's notable about Haskell as a
 -- language.
-features :: Html ()
-features =
+caseStudies :: Html ()
+caseStudies =
+  div_ [class_ "features"]
+       (container_
+          (do h1_ "Case studies"
+              row_ (do span6_ [class_ "col-md-6"] statically
+                       span6_ [class_ "col-md-6"] purefunc)
+              row_ (do span6_ [class_ "col-md-6"] inference
+                       span6_ [class_ "col-md-6"] concurrent)
+              row_ (do span6_ [class_ "col-md-6"] lazy
+                       span6_ [class_ "col-md-6"] packages)))
+
+whatIsHaskell :: Html ()
+whatIsHaskell =
   div_ [class_ "features"]
        (container_
           (do h1_ "Features"

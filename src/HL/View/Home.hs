@@ -1,12 +1,13 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE ExtendedDefaultRules #-}
 
 -- | Home/landing page.
 
 module HL.View.Home where
 
 import HL.View
-import HL.View.Code
-import HL.View.Home.Features
+
+import HL.View.Home.CaseStudies
 import HL.View.Template
 
 -- | Home view.
@@ -19,9 +20,9 @@ homeV vids =
     (\cur url ->
        do navigation True [] Nothing url
           header url
-          try url
-          community url vids
-          features
+          {-try url-}
+          {-community url vids-}
+          caseStudies
           sponsors
           events
           div_ [class_ "mobile"] $
@@ -48,12 +49,12 @@ header url =
   where branding =
           span_ [class_ "name",background url img_logo_png] "Haskell"
         summation =
-          span_ [class_ "summary"] "Commercial quality resources for using and learning Haskell"
+          span_ [class_ "summary"] "Commercial quality resources for learning and using Haskell"
         tag =
-          span_ [class_ "tag"] "Everything you need."
+          span_ [class_ "tag"] "Getting started"
         sample =
-          div_ [class_ "code-sample",title_ "This example is contrived in order to demonstrate what Haskell looks like, including: (1) where syntax, (2) enumeration syntax, (3) pattern matching, (4) consing as an operator, (5) list comprehensions, (6) infix functions. Don't take it seriously as an efficient prime number generator."]
-               (haskellPre codeSample)
+          do p_ [style_ "margin-top: 2em;"]"Everything you need to start working with Haskell."
+             p_ [style_ "margin-top:1em;"] (a_ [href_ "foo"] "Starting guide →")
 
 -- | Code sample.
 -- TODO: should be rotatable and link to some article.
@@ -69,17 +70,13 @@ try _ =
   div_ [class_ "try",onclick_ "tryhaskell.controller.inner.click()"]
        (container_
           (row_ (do span6_ [class_ "col-md-6"] repl
-                    span6_ [class_ "col-md-6",id_ "guide"]
-                           (return ()))))
-  where repl =
-          do h2_ "Try it"
-             noscript_ (span6_ (div_ [class_ "alert alert-warning"]
-                    "Try haskell requires Javascript to be enabled."))
-             span6_ [hidden_ "", id_ "cookie-warning"]
-                  (div_ [class_ "alert alert-warning"]
-                  "Try haskell requires cookies to be enabled.")
-             div_ [id_ "console"]
-                  (return ())
+                    )))
+  where repl :: Html ()
+        repl =
+          do h1_ "The Haskell Language"
+             p_ "Haskell is a lazily evaluated, pure functional, statically typed, \
+                \ML-family programming language, with a focus on by-construction \
+                \correctness, expressivity and composability."
 
 -- | Community section.
 -- TOOD: Should contain a list of thumbnail videos. See mockup.
@@ -114,12 +111,12 @@ sponsors =
          row_ (do span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://www.fpcomplete.com"] "FP Complete")
                                  " provides a number of tools and services etc."))
-                  span6_ [class_ "col-md-6"]
+                  {-span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://www.fastly.com"] "Fastly")
                                  "'s Next Generation CDN provides low latency access for all of \
                                  \Haskell.org's downloads and highest traffic services, including \
-                                 \the primary Hackage server, Haskell Platform downloads, and more." )))
-         row_ (do span6_ [class_ "col-md-6"]
+                                 \the primary Hackage server, Haskell Platform downloads, and more." ))-})
+         {-row_ (do span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://www.rackspace.com"] "Rackspace")
                                  " provides compute, storage, and networking resources, powering \
                                  \almost all of Haskell.org in several regions around the world."))
@@ -128,8 +125,8 @@ sponsors =
                                  " powers "
                                  a_ [href_ "https://status.haskell.org"] "https://status.haskell.org"
                                  ", and lets us easily tell you \
-                                 \when we broke something." )))
-         row_ (do span6_ [class_ "col-md-6"]
+                                 \when we broke something." )))-}
+         {-row_ (do span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "http://www.galois.com"] "Galois")
                                  " provides infrastructure, funds, administrative resources and \
                                  \has historically hosted critical Haskell.org infrastructure, \
@@ -137,7 +134,7 @@ sponsors =
                   span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "https://www.dreamhost.com"] "DreamHost")
                                  " has teamed up to provide Haskell.org with redundant, scalable object-storage \
-                                 \through their Dream Objects service." )))
-         row_ (do span6_ [class_ "col-md-6"]
+                                 \through their Dream Objects service." )))-}
+         {-row_ (do span6_ [class_ "col-md-6"]
                          (p_ (do strong_ (a_ [href_ "http://www.webmon.com"] "Webmon")
-                                 " provides monitoring and escalation for core haskell.org infrastructure." )))
+                                 " provides monitoring and escalation for core haskell.org infrastructure." )))-}

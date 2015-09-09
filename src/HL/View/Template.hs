@@ -117,7 +117,7 @@ navigation showBrand crumbs mroute url =
   where items =
           div_ [class_ "collapse navbar-collapse"]
                (ul_ [class_ "nav navbar-nav"]
-                    (mapM_ item [DownloadsR,CommunityR,DocumentationR]))
+                    (mapM_ item [DownloadsR,DocumentationR]))
           where item :: Route App -> Html ()
                 item route =
                   li_ [class_ "active" | Just route == mroute || elem route crumbs]

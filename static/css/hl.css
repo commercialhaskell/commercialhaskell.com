@@ -110,7 +110,7 @@ h2 {
   display: none;
 }
 .navbar {
-  background-color:#352f44;
+  background-color:#26334d;
   border-radius:0;
   border:0;
 }
@@ -134,7 +134,7 @@ h2 {
 
 .navbar-default .navbar-nav > .active > a {
   color:#d1cddc!important;
-  background-color:#312b3f;
+  background-color:#1d2237;
   border-bottom:.3em solid #465787;
 }
 
@@ -147,7 +147,7 @@ h2 {
 .navbar-default .navbar-nav a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
   color:#fff!important;
-  background-color:#312b3f;
+  background-color:#1d2237;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -215,13 +215,13 @@ h2 {
 .page-home .navbar {
   margin-bottom:0;
   background: #150e1a; /* Old browsers */
-  background: -moz-linear-gradient(left, #0d1219 0%, #22172a 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0d1219), color-stop(100%,#22172a)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #0d1219 0%,#22172a 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #0d1219 0%,#22172a 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #0d1219 0%,#22172a 100%); /* IE10+ */
-  background: linear-gradient(to right, #0d1219 0%,#22172a 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1219', endColorstr='#22172a',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, #0d1219 0%, #17182a 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#0d1219), color-stop(100%,#17182a)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #0d1219 0%,#17182a 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #0d1219 0%,#17182a 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #0d1219 0%,#17182a 100%); /* IE10+ */
+  background: linear-gradient(to right, #0d1219 0%,#17182a 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1219', endColorstr='#17182a',GradientType=1 ); /* IE6-9 */
 }
 
 .page-home .navbar-brand,.page-home .navbar-brand .logo {
@@ -237,13 +237,13 @@ h2 {
   cursor: default;
   color: #fff;
   background: #19111f; /* Old browsers */
-  background: -moz-linear-gradient(left, #19111f 0%, #2c1e37 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#19111f), color-stop(100%,#2c1e37)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #19111f 0%,#2c1e37 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #19111f 0%,#2c1e37 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #19111f 0%,#2c1e37 100%); /* IE10+ */
-  background: linear-gradient(to right, #19111f 0%,#2c1e37 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19111f', endColorstr='#2c1e37',GradientType=1 ); /* IE6-9 */
+  background: -moz-linear-gradient(left, #11131f 0%, #1a2436 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#11131f), color-stop(100%,#1a2436)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #11131f 0%,#1a2436 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #11131f 0%,#1a2436 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #11131f 0%,#1a2436 100%); /* IE10+ */
+  background: linear-gradient(to right, #11131f 0%,#1a2436 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11131f', endColorstr='#1a2436',GradientType=1 ); /* IE6-9 */
 }
 
 .page-home .header .branding {
@@ -385,8 +385,8 @@ h2 {
 }
 
 .page-home .try {
-  margin-top: 10px;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
 
 .page-home .try code * {
@@ -523,6 +523,30 @@ h2 {
   .page-home .features .rhs {
     display: none
   }
+}
+
+/* * * * * * * * * * * * * * * * * * * *
+   Case studies
+   */
+
+.page-home .case-studies .span6 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+}
+
+.page-home .case-studies h1 {
+  margin-top: 40px;
+}
+
+.page-home .case-studies h2 {
+  font-size: 25px;
+  margin-bottom: 0.7em;
+  color: #222;
+}
+
+.page-home .case-studies {
+  margin-bottom: 40px;
 }
 
 /* * * * * * * * * * * * * * * * * * * *
