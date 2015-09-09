@@ -54,7 +54,7 @@ header url =
           span_ [class_ "tag"] "Getting started"
         sample =
           do p_ [style_ "margin-top: 2em;"]"Everything you need to start working with Haskell."
-             p_ [style_ "margin-top:1em;"] (a_ [href_ "foo"] "Starting guide →")
+             p_ [style_ "margin-top:1em;"] (a_ [href_ "https://github.com/commercialhaskell/stack/blob/master/GUIDE.md"] "Starting guide →")
 
 -- | Code sample.
 -- TODO: should be rotatable and link to some article.
