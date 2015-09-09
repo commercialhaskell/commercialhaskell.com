@@ -6,9 +6,6 @@ module HL.View.Home.CaseStudies where
 
 import HL.View
 
-
-
-
 -- | Case studies of businesses using haskell.
 caseStudies :: Html ()
 caseStudies =
@@ -30,11 +27,11 @@ caseStudies =
                                   p_ (a_ [href_ "https://app.doxiq.com/d/T3CxD/Scrive-pdf"] "Read more →"))
                        span6_ [class_ "col-md-6"]
                               (do h2_ "Silk"
-                                  p_ "Founded in 2010, Silk (Amsterdam, Netherlands) has a structured content management application that offers users a sophisticated means to organize, visualize and associate their data, especially when there are links and tags within these data elements.  Once created, users can visualize, navigate, track and query the data.  One use is for PR agencies to organize their internal knowledge base as well as track patterns and trends of online content for their clients."
+                                  p_ "Silk has a structured content management application that offers users a sophisticated means to organize, visualize and associate their data, especially when there are links and tags within these data elements.  Users can visualize, navigate, track and query the data."
                                   p_ (a_ [href_ "https://app.doxiq.com/d/GvFrk/Silk-pdf"] "Read more →")))
               row_ (do span6_ [class_ "col-md-6"]
                               (do h2_ "Darpa Safe / Crash Program"
-                                  p_ "The Defense Advanced Research Projects Agency (DARPA) is a USA government agency focused on Creating breakthrough technologies for national security. By making pivotal investments in new technology-driven ideas for the United States, DARPA imagines and makes possible new capabilities for overcoming the multifaceted threats and challenges that lie ahead."
+                                  p_ "The Haskell team wrote two key programs: A simulator for the ISA that led to the design for an embedded domain-specific language for the new machine, and a parameterized assembler, so that low-level changes in the hardware architecture could be quickly accommodated by concise changes in the assembler configuration."
                                   p_ (a_ [href_ "https://app.doxiq.com/d/L01Rs/Darpa-pdf"] "Read more →"))
                        span6_ [class_ "col-md-6"]
                               (do h2_ "Bump"
