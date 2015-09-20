@@ -6,4 +6,6 @@
 /irc IrcR GET
 /mailing-lists MailingListsR GET
 /documentation DocumentationR GET
+/guide GuideR GET
 /case-studies CaseStudiesR GET
+/sig SIGR GET

@@ -51,25 +51,28 @@ instance MonadCaching (HandlerT App IO) where
 instance Human (Route App) where
   toHuman r =
     case r of
-      CommunityR           -> "Community"
-      IrcR                 -> "IRC"
-      DocumentationR       -> "Documentation"
-      HomeR                -> "Home"
-      MailingListsR        -> "Mailing Lists"
-      StaticR{}            -> "Static"
-      DownloadsR           -> "Downloads"
-      DownloadsForR os     -> "Downloads for " <> toHuman os
-      CaseStudiesR         -> "Case Studies"
+      CommunityR -> "Community"
+      IrcR -> "IRC"
+      DocumentationR -> "Documentation"
+      GuideR -> "Guide"
+      SIGR -> "SIG"
+      HomeR -> "Home"
+      MailingListsR -> "Mailing Lists"
+      StaticR{} -> "Static"
+      DownloadsR -> "Downloads"
+      DownloadsForR os -> "Downloads for " <> toHuman os
+      CaseStudiesR -> "Case Studies"
 
 instance Slug (Route App) where
   toSlug r =
     case r of
-      CommunityR        -> "community"
-      IrcR              -> "irc"
-      DocumentationR    -> "documentation"
-      HomeR             -> "home"
-      MailingListsR     -> "mailing-lists"
-      StaticR{}         -> "static"
-      DownloadsR        -> "downloads"
-      DownloadsForR{}   -> "downloads"
-      CaseStudiesR      -> "case-studies"
+      CommunityR -> "community"
+      IrcR -> "irc"
+      DocumentationR -> "documentation"
+      SIGR -> "sig"
+      HomeR -> "home"
+      MailingListsR -> "mailing-lists"
+      StaticR{} -> "static"
+      DownloadsR -> "downloads"
+      DownloadsForR{} -> "downloads"
+      CaseStudiesR -> "case-studies"

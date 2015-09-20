@@ -24,7 +24,7 @@ homeV vids =
           try url
           community url vids
           whatIsHaskell
-          haskellForBusiness url
+          gettingStarted url
           sponsors
           events
           div_ [class_ "mobile"] $
@@ -35,12 +35,14 @@ homeV vids =
                ,js_tryhaskell_js
                ,js_tryhaskell_pages_js])
 
-haskellForBusiness
+gettingStarted
   :: (Route App -> Text) -> Html ()
-haskellForBusiness url =
-  div_ [class_ "case-studies"]
+gettingStarted url =
+  div_ [class_ "getting-started-subsection"]
        (container_
-          (do h1_ "Haskell for Business"
+          (do h1_ "Next steps"
+              p_ "We have everything you need to start working with Haskell now."
+              p_ (a_ [href_ (url GuideR)] "Starting guide →")
               p_ "We have collected case studies from businesses using Haskell in industry."
               p_ (a_ [href_ (url CaseStudiesR)] "View case studies →")))
 
@@ -65,7 +67,7 @@ header url =
           span_ [class_ "tag"] "Getting started"
         sample =
           do p_ [style_ "margin-top: 2em;"]"Everything you need to start working with Haskell."
-             p_ [style_ "margin-top:1em;"] (a_ [href_ "https://github.com/commercialhaskell/stack/blob/master/GUIDE.md"] "Starting guide →")
+             p_ [style_ "margin-top:1em;"] (a_ [href_ (url GuideR)] "Starting guide →")
 
 -- | Code sample.
 -- TODO: should be rotatable and link to some article.
@@ -104,7 +106,7 @@ community url vids =
                       (row_ (span8_ [class_ "col-md-8"]
                                     (do h1_ "An initiative by the Commercial Haskell Group"
                                         p_ [class_ "learn-more"]
-                                           (a_ [href_ (url CommunityR)] "Learn more"))))
+                                           (a_ [href_ (url SIGR)] "Learn more"))))
                     container_
                       [id_ "video-description"]
                       (row_ (span8_ [class_ "col-md-8"]

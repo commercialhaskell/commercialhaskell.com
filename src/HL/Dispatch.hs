@@ -12,6 +12,8 @@ module HL.Dispatch () where
 import HL.Controller.Community
 import HL.Controller.CaseStudies
 import HL.Controller.Documentation
+import HL.Controller.Guide
+import HL.Controller.SIG
 import HL.Controller.Downloads
 import HL.Controller.Home
 import HL.Controller.Irc

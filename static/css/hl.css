@@ -385,7 +385,7 @@ h2 {
 }
 
 .page-home .try {
-  margin-top: 50px;
+  margin-top: 10px;
   margin-bottom: 0px;
 }
 
@@ -403,6 +403,11 @@ h2 {
   font-size: 25px;
   color: #000;
   margin-bottom: 20px;
+}
+
+.page-home .getting-started-subsection {
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 /* * * * * * * * * * * * * * * * * * * *
