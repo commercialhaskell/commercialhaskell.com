@@ -1,3 +1,4 @@
+{-# LANGUAGE FlexibleContexts #-}
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE ExtendedDefaultRules #-}
 
@@ -23,6 +24,7 @@ homeV vids =
           {-try url-}
           {-community url vids-}
           whatIsHaskell
+          haskellForBusiness url
           sponsors
           events
           div_ [class_ "mobile"] $
@@ -32,6 +34,15 @@ homeV vids =
                [js_jquery_console_js
                ,js_tryhaskell_js
                ,js_tryhaskell_pages_js])
+
+haskellForBusiness
+  :: (Route App -> Text) -> Html ()
+haskellForBusiness url =
+  div_ [class_ "case-studies"]
+       (container_
+          (do h1_ "Haskell for Business"
+              p_ "We have collected case studies from businesses using Haskell in industry."
+              p_ (a_ [href_ (url CaseStudiesR)] "View case studies →")))
 
 -- | Top header section with the logo and code sample.
 header :: (Route App -> Text) -> Html ()
