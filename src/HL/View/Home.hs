@@ -21,8 +21,8 @@ homeV vids =
     (\cur url ->
        do navigation True [] Nothing url
           header url
-          {-try url-}
-          {-community url vids-}
+          try url
+          community url vids
           whatIsHaskell
           haskellForBusiness url
           sponsors
@@ -81,13 +81,17 @@ try _ =
   div_ [class_ "try",onclick_ "tryhaskell.controller.inner.click()"]
        (container_
           (row_ (do span6_ [class_ "col-md-6"] repl
-                    )))
-  where repl :: Html ()
-        repl =
-          do h1_ "The Haskell Language"
-             p_ "Haskell is a lazily evaluated, pure functional, statically typed, \
-                \ML-family programming language, with a focus on by-construction \
-                \correctness, expressivity and composability."
+                    span6_ [class_ "col-md-6",id_ "guide"]
+                           (return ()))))
+  where repl =
+          do h2_ "Try it"
+             noscript_ (span6_ (div_ [class_ "alert alert-warning"]
+                    "Try haskell requires Javascript to be enabled."))
+             span6_ [hidden_ "", id_ "cookie-warning"]
+                  (div_ [class_ "alert alert-warning"]
+                  "Try haskell requires cookies to be enabled.")
+             div_ [id_ "console"]
+                  (return ())
 
 -- | Community section.
 -- TOOD: Should contain a list of thumbnail videos. See mockup.
