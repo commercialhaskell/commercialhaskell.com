@@ -76,3 +76,4 @@ instance Slug (Route App) where
       DownloadsR -> "downloads"
       DownloadsForR{} -> "downloads"
       CaseStudiesR -> "case-studies"
+      GuideR -> "guide"
