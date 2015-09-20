@@ -5,10 +5,11 @@
 module HL.Controller.Guide where
 
 import HL.Controller
+import HL.Controller.Markdown
 import HL.View
-import HL.View.Guide
+
 
 -- | Guide controller.
 getGuideR :: C (Html ())
 getGuideR =
-  lucid guideV
+  markdownPage [] "Guide" "guide.md"
