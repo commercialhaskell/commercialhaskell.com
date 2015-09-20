@@ -7,7 +7,7 @@ module HL.View.Home where
 
 import HL.View
 
-import HL.View.Home.CaseStudies
+import HL.View.Home.Features
 import HL.View.Template
 
 -- | Home view.
@@ -22,7 +22,7 @@ homeV vids =
           header url
           {-try url-}
           {-community url vids-}
-          caseStudies
+          whatIsHaskell
           sponsors
           events
           div_ [class_ "mobile"] $

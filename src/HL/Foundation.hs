@@ -59,6 +59,7 @@ instance Human (Route App) where
       StaticR{}            -> "Static"
       DownloadsR           -> "Downloads"
       DownloadsForR os     -> "Downloads for " <> toHuman os
+      CaseStudiesR         -> "Case Studies"
 
 instance Slug (Route App) where
   toSlug r =
@@ -71,3 +72,4 @@ instance Slug (Route App) where
       StaticR{}         -> "static"
       DownloadsR        -> "downloads"
       DownloadsForR{}   -> "downloads"
+      CaseStudiesR      -> "case-studies"
