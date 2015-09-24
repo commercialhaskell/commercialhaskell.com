@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+    name: commercialhaskell
+    labels:
+        name: commercialhaskell
+spec:
+  replicas: 1
+  selector:
+    name: commercialhaskell
+  template:
+    metadata:
+        labels:
+            name: commercialhaskell
+    spec:
+        containers:
+        - name: commercialhaskell
+          image: commercialhaskell/commercialhaskell.com
+          imagePullPolicy: Always
+          command: ["hl"]
+          workingDir: /app
+          ports:
+          - containerPort: 3003
+            hostPort: 3003
+          env:
+          - name: PORT
+            value: "3003"
+          livenessProbe:
+              httpGet:
+                  path: /
+                  port: 3003
